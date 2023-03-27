@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 2px solid red;
+}
+
+
+body,
+.sketch-container {
+  display: flex;
+}
+
+.sketch-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  background: lightcyan;
+  padding: 9vw;
+}
+
+.sketch-item {
+  aspect-ratio: 1 / 1;
+  background: lightgreen;
+}
