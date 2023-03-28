@@ -8,12 +8,17 @@ const sketchContainer = document.querySelector('.sketch-container');
 
 const addDiv = () => document.createElement('div');
 
-for (let i = 0; i < DIMENSION ** 2; i++) {
-  let div = addDiv();
-  div.classList.add('sketch-item');
-  div.setAttribute('style', sketchItemStyle);
-  sketchContainer.appendChild(div);
+const setHover = (event) => event.currentTarget.classList.add('hover-state');
+const hoverOptions = {'once': true}
+
+function setupSketch() {
+  for (let i = 0; i < DIMENSION ** 2; i++) {
+    let div = addDiv();
+    div.classList.add('sketch-item');
+    div.setAttribute('style', sketchItemStyle);
+    div.addEventListener('pointerover', setHover, hoverOptions);
+    sketchContainer.appendChild(div);
+  };
 };
 
-
-console.log(sketchContainer);
+setupSketch();
