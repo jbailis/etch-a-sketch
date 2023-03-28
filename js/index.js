@@ -1,7 +1,8 @@
-const DIMENSION = 16;
+const DIMENSION = prompt("Dimension of your sketch?");
+//const DIMENSION = 16;
 const MAX_VIEWPORTS = 80; //derived from css.  remaining viewports after padding
 
-const divWidth = Math.floor(MAX_VIEWPORTS / DIMENSION);
+const divWidth = MAX_VIEWPORTS / DIMENSION;
 const sketchItemStyle = `width: ${divWidth}vw;`;
 
 const sketchContainer = document.querySelector('.sketch-container');
