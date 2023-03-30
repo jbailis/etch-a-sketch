@@ -1,4 +1,20 @@
-const DIMENSION = prompt("Dimension of your sketch?");
+const runValidation = (validation, errMsg) => data =>
+  validation(data) ? true : alert(errMsg);
+
+const validateDimension = runValidation(data =>
+  Number.isInteger(data) && data > 0 && data <= 100,
+  'Dimension must be a positive integer in range [1, 100]');
+
+function getDimension() {
+  let candidate = '';
+  do {candidate = Number(prompt('Dimension of your sketch?'));
+  } while (!validateDimension(candidate));
+  return candidate;
+};
+
+const DIMENSION = getDimension();
+
+
 //const DIMENSION = 16;
 const MAX_VIEWPORTS = 80; //derived from css.  remaining viewports after padding
 
